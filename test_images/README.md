@@ -1,0 +1,1 @@
+This dir contains auto-generated test images.

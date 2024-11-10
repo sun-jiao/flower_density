@@ -1,0 +1,1 @@
+This dir contains annotated images and result charts.
