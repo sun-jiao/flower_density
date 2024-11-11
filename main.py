@@ -1,7 +1,4 @@
-from ultralytics import YOLO
-from PIL import Image
-
-from flower_detection import yolo_detection
+from flower_detection import batch_detection
 
 if __name__ == '__main__':
-    yolo_detection("test_images")
+    batch_detection("test_images")
