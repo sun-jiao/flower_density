@@ -1,2 +1,3 @@
 - file `pexels-stephanthem-753869.jpg` by [Stephan Müller](https://www.pexels.com/photo/aerial-photography-of-wide-green-grass-field-753869/)
 - file `Honeycrisp-Apple.png` by [Evan-Amos](https://commons.wikimedia.org/wiki/File:Honeycrisp-Apple.jpg)
+- file `Banana.svg.png` by [Elembis](https://commons.wikimedia.org/wiki/File:Bananas.svg)
