@@ -1,23 +1,23 @@
 import os
 import re
-import pandas as pd
-import matplotlib.pyplot as plt
 
-from PIL import Image
+import matplotlib.pyplot as plt
+import pandas as pd
 from ultralytics import YOLO
 
 model = YOLO("yolo11x.pt")
 
-flower_cls = 47  # actually it's apple's class
+flower1_cls = 47  # actually it's apple's class
+flower2_cls = 46  # banana
 
 def yolo_detection(image):
     results = model(image)
-    # it returns a list of results, if the given `image` is a folder, the returned list would contain multiple results,
-    # while we keep the param as a single image so `results` contains only one result.
+    # it returns a list of results, if the given `image` is a folder, the returned list would contain multiple results
+    # for every image in this folder, while we keep the param as a single image so `results` contains only one result.
     result = results[0]
     result.save(filename=f"results/{os.path.splitext(os.path.basename(image))[0]}-result.JPG")
 
-    return len(list(filter(lambda r: r.boxes.cls.item() == flower_cls, list(result))))
+    return len(list(filter(lambda r: r.boxes.cls.item() == flower1_cls, list(result))))
 
 
 
@@ -45,4 +45,4 @@ def batch_detection(directory):
     plt.ylabel("Flower density")
     plt.title("Flower density Over Time")
     plt.grid(True)
-    plt.savefig("results/results_chart.png")
+    plt.savefig("results/results_chart-density.png")

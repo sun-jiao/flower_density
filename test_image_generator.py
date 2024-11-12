@@ -5,8 +5,8 @@ from PIL import Image
 
 
 grassland = Image.open("assets/pexels-stephanthem-753869.jpg")
-flower = Image.open("assets/Honeycrisp-Apple.png").resize((100, 100))
-invasive = Image.open("assets/Bananas.svg.png").resize((100, 100))
+flower1 = Image.open("assets/Honeycrisp-Apple.png").resize((100, 100))
+flower2 = Image.open("assets/Bananas.svg.png").resize((100, 100))
 
 
 class Normal(metaclass=ABCMeta):
@@ -51,7 +51,7 @@ def generate_single_species():
         for p in positions:
             # x and y value of box must be int,
             # the first `flower` is the image to be pasted, and the second one is a mask to keep its transparency.
-            result.paste(flower, (int(p[0]), int(p[1])), flower)
+            result.paste(flower1, (int(p[0]), int(p[1])), flower1)
 
         result.save(f"test_images/2024-06-{str(i + 1).zfill(2)}.JPG")  # fill 0, keep its length 2 chars
 
